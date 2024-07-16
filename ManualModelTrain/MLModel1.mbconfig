@@ -1,0 +1,177 @@
+﻿{
+  "Scenario": "Forecasting",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "D:\\Office Code\\SJ\\Microsoft_ML_DotNet\\TestML\\ManualModelTrain\\Data\\electricityusageClient339.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "date",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "energy_use",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "item_id",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 21.694347941558636,
+        "RuntimeInSeconds": 0.053,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 50,
+            "SeriesLength": 743,
+            "TrainSize": 2159,
+            "Horizon": 10,
+            "OutputColumnName": "energy_use",
+            "InputColumnName": "energy_use",
+            "ConfidenceLowerBoundColumn": "energy_use_LB",
+            "ConfidenceUpperBoundColumn": "energy_use_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 21.694347941558636,
+        "RuntimeInSeconds": 0.056,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 50,
+            "SeriesLength": 2267,
+            "TrainSize": 2159,
+            "Horizon": 10,
+            "OutputColumnName": "energy_use",
+            "InputColumnName": "energy_use",
+            "ConfidenceLowerBoundColumn": "energy_use_LB",
+            "ConfidenceUpperBoundColumn": "energy_use_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 21.694347941558636,
+        "RuntimeInSeconds": 0.058,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 50,
+            "SeriesLength": 157,
+            "TrainSize": 2159,
+            "Horizon": 10,
+            "OutputColumnName": "energy_use",
+            "InputColumnName": "energy_use",
+            "ConfidenceLowerBoundColumn": "energy_use_LB",
+            "ConfidenceUpperBoundColumn": "energy_use_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 21.694347941558636,
+        "RuntimeInSeconds": 0.062,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 50,
+            "SeriesLength": 164,
+            "TrainSize": 2159,
+            "Horizon": 10,
+            "OutputColumnName": "energy_use",
+            "InputColumnName": "energy_use",
+            "ConfidenceLowerBoundColumn": "energy_use_LB",
+            "ConfidenceUpperBoundColumn": "energy_use_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 21.694347941558636,
+        "RuntimeInSeconds": 0.056,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 50,
+            "SeriesLength": 1189,
+            "TrainSize": 2159,
+            "Horizon": 10,
+            "OutputColumnName": "energy_use",
+            "InputColumnName": "energy_use",
+            "ConfidenceLowerBoundColumn": "energy_use_LB",
+            "ConfidenceUpperBoundColumn": "energy_use_UB"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ForecastBySsa"
+    },
+    "Schema": "e0",
+    "MetricName": "RMSE",
+    "ModelFilePath": "D:\\Office Code\\SJ\\Microsoft_ML_DotNet\\TestML\\ManualModelTrain\\MLModel1.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 3,
+    "OptimizeMetric": "RMSE",
+    "Subsampling": false,
+    "Type": "ForecastingTrainingOption",
+    "TrainingTime": 180,
+    "UseCrossValidation": false,
+    "Horizon": 10,
+    "TimeColumn": "date",
+    "LabelColumn": "energy_use",
+    "UseDefaultIndex": false,
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "FileValidationOption",
+      "FilePath": "D:\\Office Code\\SJ\\Microsoft_ML_DotNet\\TestML\\ManualModelTrain\\Data\\electricityusageClient339_TestLastMonthData.csv"
+    }
+  }
+}

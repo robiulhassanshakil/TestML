@@ -1,0 +1,316 @@
+﻿{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "C:\\Users\\User\\Downloads\\carbon_emissions_2020_2025.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Timestamp",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "DateTime",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "OrganizationID",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ProjectID",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "CarbonEmission",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 2.2582115269176306E-05,
+        "RuntimeInSeconds": 1.236,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ],
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Timestamp"
+            ],
+            "InputColumnNames": [
+              "Timestamp"
+            ],
+            "TargetType": "Single"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID",
+              "Timestamp"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 21,
+            "NumberOfLeaves": 1026,
+            "FeatureFraction": 0.4335218,
+            "LabelColumnName": "CarbonEmission",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 2.2582115269176306E-05,
+        "RuntimeInSeconds": 1.275,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ],
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Timestamp"
+            ],
+            "InputColumnNames": [
+              "Timestamp"
+            ],
+            "TargetType": "Single"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID",
+              "Timestamp"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 21,
+            "NumberOfLeaves": 1089,
+            "FeatureFraction": 0.439151615,
+            "LabelColumnName": "CarbonEmission",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 2.2582115269176306E-05,
+        "RuntimeInSeconds": 1.288,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ],
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Timestamp"
+            ],
+            "InputColumnNames": [
+              "Timestamp"
+            ],
+            "TargetType": "Single"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID",
+              "Timestamp"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 21,
+            "NumberOfLeaves": 981,
+            "FeatureFraction": 0.43589294,
+            "LabelColumnName": "CarbonEmission",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 2.2582115269176306E-05,
+        "RuntimeInSeconds": 1.266,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ],
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Timestamp"
+            ],
+            "InputColumnNames": [
+              "Timestamp"
+            ],
+            "TargetType": "Single"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID",
+              "Timestamp"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 21,
+            "NumberOfLeaves": 997,
+            "FeatureFraction": 0.435879022,
+            "LabelColumnName": "CarbonEmission",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 2.2582115269176306E-05,
+        "RuntimeInSeconds": 1.28,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ],
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Timestamp"
+            ],
+            "InputColumnNames": [
+              "Timestamp"
+            ],
+            "TargetType": "Single"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "OrganizationID",
+              "ProjectID",
+              "Timestamp"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 21,
+            "NumberOfLeaves": 1017,
+            "FeatureFraction": 0.431695253,
+            "LabelColumnName": "CarbonEmission",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ReplaceMissingValues",
+      "e1": "ConvertType",
+      "e2": "Concatenate",
+      "e3": "FastTreeRegression",
+      "e4": "FastForestRegression",
+      "e5": "LightGbmRegression",
+      "e6": "LbfgsPoissonRegressionRegression",
+      "e7": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "D:\\Office Code\\SJ\\Microsoft_ML_DotNet\\TestML\\MLModel1_WebApi1\\MLModel1.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Tuner": "eci-cfo",
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 600,
+    "OptimizeMetric": "RSquared",
+    "LabelColumn": "CarbonEmission",
+    "AvailableTrainers": [
+      "SDCA",
+      "LBFGS",
+      "LGBM",
+      "FASTTREE",
+      "FASTFOREST"
+    ],
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}

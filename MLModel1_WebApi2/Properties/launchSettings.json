@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MLModel1_WebApi2": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:7581;http://localhost:7582"
+    }
+  }
+}

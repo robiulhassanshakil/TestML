@@ -1,0 +1,186 @@
+﻿{
+  "Scenario": "Forecasting",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "C:\\Users\\User\\Downloads\\carbon_emissions_2020_2025.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Timestamp",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "OrganizationID",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ProjectID",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "CarbonEmission",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 9.7743069637596633,
+        "RuntimeInSeconds": 139.855,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 766,
+            "SeriesLength": 2309,
+            "TrainSize": 1048575,
+            "Horizon": 10,
+            "OutputColumnName": "CarbonEmission",
+            "InputColumnName": "CarbonEmission",
+            "ConfidenceLowerBoundColumn": "CarbonEmission_LB",
+            "ConfidenceUpperBoundColumn": "CarbonEmission_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 9.8019132636356865,
+        "RuntimeInSeconds": 338.16,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2036,
+            "SeriesLength": 4085,
+            "TrainSize": 1048575,
+            "Horizon": 10,
+            "OutputColumnName": "CarbonEmission",
+            "InputColumnName": "CarbonEmission",
+            "ConfidenceLowerBoundColumn": "CarbonEmission_LB",
+            "ConfidenceUpperBoundColumn": "CarbonEmission_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 9.9929543343975951,
+        "RuntimeInSeconds": 65.882,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 248,
+            "SeriesLength": 949,
+            "TrainSize": 1048575,
+            "Horizon": 10,
+            "OutputColumnName": "CarbonEmission",
+            "InputColumnName": "CarbonEmission",
+            "ConfidenceLowerBoundColumn": "CarbonEmission_LB",
+            "ConfidenceUpperBoundColumn": "CarbonEmission_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 11.7688646948316,
+        "RuntimeInSeconds": 30.532,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 10,
+            "TrainSize": 1048575,
+            "Horizon": 10,
+            "OutputColumnName": "CarbonEmission",
+            "InputColumnName": "CarbonEmission",
+            "ConfidenceLowerBoundColumn": "CarbonEmission_LB",
+            "ConfidenceUpperBoundColumn": "CarbonEmission_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 11.7688646948316,
+        "RuntimeInSeconds": 30.316,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 729,
+            "TrainSize": 1048575,
+            "Horizon": 10,
+            "OutputColumnName": "CarbonEmission",
+            "InputColumnName": "CarbonEmission",
+            "ConfidenceLowerBoundColumn": "CarbonEmission_LB",
+            "ConfidenceUpperBoundColumn": "CarbonEmission_UB"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ForecastBySsa"
+    },
+    "Schema": "e0",
+    "MetricName": "RMSE",
+    "ModelFilePath": "D:\\Office Code\\SJ\\Microsoft_ML_DotNet\\TestML\\TestML\\MLModel1.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 3,
+    "OptimizeMetric": "RMSE",
+    "Subsampling": false,
+    "Tuner": "eci-cfo",
+    "Type": "ForecastingTrainingOption",
+    "TrainingTime": 600,
+    "UseCrossValidation": false,
+    "Horizon": 10,
+    "TimeColumn": "Timestamp",
+    "LabelColumn": "CarbonEmission",
+    "UseDefaultIndex": false,
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}
